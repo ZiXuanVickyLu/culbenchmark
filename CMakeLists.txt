@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.25)
 
 project(culbenchmark LANGUAGES CXX CUDA)
 enable_language(CUDA)

@@ -88,7 +88,7 @@ FetchContent_Declare(
     OVERRIDE_FIND_PACKAGE
 )
 
-find_package(cuda-api-wrappers CONFIG REQUIRED)
+FetchContent_MakeAvailable(cuda-api-wrappers)
 
 # AMGX
 message(STATUS "fetch AMGX...")
