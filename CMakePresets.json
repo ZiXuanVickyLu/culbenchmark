@@ -1,0 +1,111 @@
+{
+        "version": 3,
+        "configurePresets": [
+            {
+                "name": "relwithdebinfo",
+                "displayName": "Release default build with debug info",
+                "description": "Release build with debugging information",
+                "generator": "Ninja",
+                "binaryDir": "${sourceDir}/build/relwithdebinfo",
+                "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+                "cacheVariables": {
+                    "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                    "CMAKE_CXX_FLAGS": "-O2 -g",
+                    "CLBCH_USE_DOUBLE": "ON"
+                }
+            },
+            {
+                "name": "debug",
+                "displayName": "Debug default build",
+                "description": "Debug build with full debugging information",
+                "generator": "Ninja",
+                "binaryDir": "${sourceDir}/build/debug",
+                "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+                "cacheVariables": {
+                    "CMAKE_BUILD_TYPE": "Debug",
+                    "CMAKE_CXX_FLAGS": "-g -O0 -Wall -Wextra",
+                    "CLBCH_USE_DOUBLE": "ON"
+                }
+            },
+            {
+                "name": "release",
+                "displayName": "Release default build",
+                "description": "Release build with full optimization",
+                "generator": "Ninja",
+                "binaryDir": "${sourceDir}/build/release",
+                "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+                "cacheVariables": {
+                    "CMAKE_BUILD_TYPE": "Release",
+                    "CMAKE_CXX_FLAGS": "-O3",
+                    "CLBCH_USE_DOUBLE": "ON"
+                }
+            },
+            {
+                "name": "release_debug_clion",
+                "displayName": "Release with debug info for clion",
+                "description": "Release with debug info for clion to isolate the indexing",
+                "generator": "Ninja",
+                "binaryDir": "${sourceDir}/build/cmake-build-release-debug-clion",
+                "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+                "cacheVariables": {
+                    "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                    "CMAKE_CXX_FLAGS": "-O2 -g",
+                    "CLBCH_USE_DOUBLE": "ON"
+                }
+            },
+            {
+                "name": "linux_slient_release_double",
+                "displayName": "Linux release build double",
+                "description": "Linux deploy release build double",
+                "generator": "Ninja",
+                "binaryDir": "${sourceDir}/build/linux_slient_release_double",
+                "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+                "cacheVariables": {
+                    "CMAKE_BUILD_TYPE": "Release",
+                    "CMAKE_CXX_FLAGS": "-O3",
+                    "CLBCH_USE_DOUBLE": "ON"
+                }
+            },
+    
+            {
+                "name": "linux_slient_release_float",
+                "displayName": "Linux release build float",
+                "description": "Linux deploy release build float",
+                "generator": "Ninja",
+                "binaryDir": "${sourceDir}/build/linux_slient_release_float",
+                "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+                "cacheVariables": {
+                    "CMAKE_BUILD_TYPE": "Release",
+                    "CMAKE_CXX_FLAGS": "-O3",
+                    "CLBCH_USE_DOUBLE": "OFF"
+                }
+            }
+        ],
+    
+        "buildPresets": [
+            {
+                "name": "relwithdebinfo",
+                "configurePreset": "relwithdebinfo"
+            },
+            {
+                "name": "debug",
+                "configurePreset": "debug"
+            },
+            {
+                "name": "release",
+                "configurePreset": "release"
+            },
+            {
+                "name": "release_debug_clion",
+                "configurePreset": "release_debug_clion"
+            },
+            {
+                "name": "linux_slient_release_double",
+                "configurePreset": "linux_slient_release_double"
+            },
+            {
+                "name": "linux_slient_release_float",
+                "configurePreset": "linux_slient_release_float"
+            }
+        ]
+    }
